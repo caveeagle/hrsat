@@ -1,0 +1,250 @@
+
+
+.dijitInline {
+	
+	display:inline-block;			
+	#zoom: 1; 
+	#display:inline; 
+	border:0;
+	padding:0;
+	vertical-align:middle;
+	#vertical-align: auto;	
+}
+
+
+
+
+.dijitCheckBox,
+.dijitRadio,
+.dijitCheckBoxInput {
+	padding: 0;
+	border: 0;
+	width: 16px;
+	height: 16px;
+	background-position:center center;
+	background-repeat:no-repeat;
+	overflow: hidden;
+}
+.dijitCheckBox input,
+.dijitRadio input {
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+.dijitCheckBoxInput {
+	
+	opacity: 0;
+}
+.dj_ie .dijitCheckBoxInput {
+	filter: alpha(opacity=0);
+}
+.dj_a11y .dijitCheckBox,
+.dj_a11y .dijitRadio {
+	
+	width: auto !important;
+	height: auto !important;
+}
+.dj_a11y .dijitCheckBoxInput {
+	opacity: 1;
+	filter: none;
+	width: auto;
+	height: auto;
+}
+
+.dijitTree {
+
+	overflow: visible; /* by Efr */
+
+	-webkit-tap-highlight-color: transparent;
+}
+.dijitTreeContainer {
+	float: left;	
+}
+.dijitTreeIndent {
+	
+	width: 19px;
+}
+.dijitTreeRow, .dijitTreeContent {
+	white-space: nowrap;
+}
+.dj_ie .dijitTreeLabel:focus {
+	
+	outline: 1px dotted black;
+}
+.dijitTreeRow img {
+	
+	vertical-align: middle;
+}
+.dijitTreeContent {
+    cursor: default;
+}
+.dijitExpandoText {
+	display: none;
+}
+.dj_a11y .dijitExpandoText {
+	display: inline;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-family: monospace;
+	border-style: solid;
+	border-width: thin;
+	cursor: pointer;
+}
+.dijitTreeLabel {
+    
+    /*  By EFR */
+    
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+
+    /*font-size: 0.688em;*/
+    /*font-size: 10px;*/
+    
+	margin: 0 4px;
+}
+.claro .dijitTreeNode {
+  zoom: 1;
+  
+}
+.claro .dijitTreeIsRoot {
+  background-image: none;
+}
+.claro .dijitTreeRow,
+.claro .dijitTreeNode .dojoDndItemBefore,
+.claro .dijitTreeNode .dojoDndItemAfter {
+  
+  padding: 4px 0 2px 0;
+  background-color: none;
+  background-color: transparent;
+  background-color: rgba(171, 214, 255, 0);
+  background-position: 0 0;
+  background-repeat: repeat-x;
+  border: solid 0 transparent;
+  color: #000000;
+  -webkit-transition-property: background-color, border-color;
+  -moz-transition-property: background-color, border-color;
+  transition-property: background-color, border-color;
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.claro .dijitTreeRowHover {
+  background-color: #abd6ff;
+  background-image: url("standardGradient.png");
+  background-repeat: repeat-x;
+  background-image: -moz-linear-gradient(rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 100%);
+  background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 100%);
+  background-image: -o-linear-gradient(rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 100%);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 100%);
+  _background-image: none;
+  padding: 3px 0 1px;
+  border-color: #759dc0;
+  border-width: 1px 0;
+  color: #000000;
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+}
+
+.claro .dijitTreeRowFocused {
+  background-repeat: repeat;
+}
+.claro .dijitTreeExpando {
+  background-image: url("treeExpandImages.png");
+  width: 16px;
+  height: 16px;
+  background-position: -35px 0;
+  
+}
+
+.claro .dijitTreeRowHover .dijitTreeExpandoOpened {
+  background-position: -53px 0;
+}
+.claro .dijitTreeExpandoClosed {
+  background-position: 1px 0;
+}
+.claro .dijitTreeRowHover .dijitTreeExpandoClosed {
+  background-position: -17px 0;
+}
+.claro .dijitTreeExpandoLeaf,
+.dj_ie6 .claro .dijitTreeExpandoLeaf {
+  background-image: none;
+}
+
+.claro .dijitTreeNode .dojoDndItemAfter .dijitTreeContent {
+  border-bottom: 2px solid #759dc0;
+}
+ 
+
+.claro .cbtreeCheckBox {
+	background-image: url('spriteCheckbox.gif'); /* checkbox sprite image */
+	background-repeat: no-repeat;
+	width: 16px;
+	height: 16px;
+	margin: 0;
+	padding: 0;
+}
+
+.claro .cbtreeCheckBox {
+	/* unchecked */
+	background-position: -16px;
+}
+
+.claro .cbtreeCheckBoxChecked {
+	/* checked */
+	background-position: 0px;
+}
+
+.claro .cbtreeCheckBoxMixed {
+	/* checked & mixed */
+	background-position: -32px;
+}
+
+.claro .cbtreeCheckBoxDisabled {
+	/* disabled */
+	background-position: -64px;
+}
+
+.claro .cbtreeCheckBoxCheckedDisabled {
+	/* disabled but checked */
+	background-position: -48px;
+}
+
+.claro .cbtreeCheckBoxMixedDisabled {
+	/* checked & mixed */
+	background-position: -80px;
+}
+
+.claro .cbtreeCheckBoxReadOnly {
+	/* disabled */
+	background-position: -64px;
+}
+
+.claro .cbtreeCheckBoxCheckedReadOnly {
+	/* disabled but checked */
+	background-position: -48px;
+}
+
+.claro .cbtreeCheckBoxMixedReadOnly {
+	/* checked & mixed */
+	background-position: -80px;
+}
+
+.claro .cbtreeCheckBoxHover {
+	/* hovering over an unchecked enabled checkbox */
+	background-position: -112px;
+}
+
+.claro .cbtreeCheckBoxCheckedHover {
+	/* hovering over a checked enabled checkbox */
+	background-position: -96px;
+}
+
+.claro .cbtreeCheckBoxMixedHover {
+	/* checked & mixed */
+	background-position: -128px;
+}

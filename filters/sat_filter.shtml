@@ -1,0 +1,109 @@
+
+<style type="text/css">
+    @import "/geosmis/tabs/hrsat2/css/tree_claro.css";
+</style>
+
+
+<script type="text/javascript">
+
+var _satModelHrsat;        
+
+require([ "dojo/ready","dojo/store/Memory","cbtree/Tree","cbtree/model/TreeStoreModel"],
+    function( ready, Memory, Tree, ObjectStoreModel) {
+            
+            var label_name_field = "name";
+            var root_label_name = "Приборы (спутники)";
+            
+            if(project_language=="eng")
+            {
+             label_name_field = "engname";
+             root_label_name = "Devices (satellites)";   
+            }    
+            
+            ready(function(){
+                makeSatellitesTree();
+            }); 
+                    
+                    
+			function makeSatellitesTree()
+			{
+				HRSAT2STORE = new Memory( { data: satdata_HRSAT2 });
+				
+				_satModelHrsat = new ObjectStoreModel( { store: HRSAT2STORE,
+												 query: {id: "Devs"},
+												 labelAttr: label_name_field, 
+												 labelType: "html",
+												 rootLabel: root_label_name,
+												 checkedRoot: true
+											 });
+
+					sattree = new Tree( 
+					{ 
+                        model: _satModelHrsat, 
+                        id:"tree_HRSAT2",
+                        attachToForm:true,
+                        checkBoxes: true,
+                        nodeIcons: false,						    
+                        leafIcons: false,
+                        autoExpand: true,
+                        
+                        getTreeNodeById: function( id ) // new function to find DOM Tree node
+                        {
+                            return this._itemNodesMap[ id ][0];
+                        },
+                        branchIcons: false
+                        
+					}, "CheckboxTreeDiv" ); 
+                    
+					sattree.startup();
+
+					sattree.on("click",satDeviceChanged);
+					
+					sattree.on("load",satTreeOnLoad); 
+		    }
+		    
+            function satDeviceChanged(item, node, event)
+            {
+              newFiltersChanged();
+            }    		
+            
+            function satTreeOnLoad()
+            {
+                collapseChildrenNodes();
+            }    
+            
+            function collapseChildrenNodes()
+            {
+                /* Collapse children */
+                var ROOT_ID = "Devs";
+                
+                var satstore = HRSAT2STORE;
+                
+            	dojo.when(satstore.getChildren(satstore.get(ROOT_ID)), function (children) {
+            	    children.forEach(function (child) 
+            	    { 
+            	           //console.info("Children: " + child.name);
+            			   var treeNode = sattree.getTreeNodeById(child.id);
+            			   treeNode.collapse();
+            	    });
+            	});
+            }
+            
+		        		
+});
+
+function getSatModelHrsat()
+{
+    return _satModelHrsat;
+}        
+
+
+</script>
+
+<div class="claro">
+    <form name="satform" id=satformid>
+	    <div id="CheckboxTreeDiv"></div>
+    </form>
+</div>
+
+

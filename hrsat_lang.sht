@@ -1,0 +1,85 @@
+<script	type="text/javascript">
+
+if(	typeof( LANGUAGE_OBJ_HTML ) ==	"undefined") { LANGUAGE_OBJ_HTML={}; }
+
+//!!! CHANGE _tab_id TO PROPER
+var _tab_id = 'tab_hilayers';
+
+if(	typeof( LANGUAGE_CSS_TABS_HINT ) ==	"undefined") { LANGUAGE_CSS_TABS_HINT={}; }
+// Hash ID - CSS class name for tab icon without 'dot'
+LANGUAGE_CSS_TABS_HINT[_tab_id] = 
+{
+	rus:{ tab_hrsat_icon: 'Данные высокого разрешения' },
+	eng:{ tab_hrsat_icon: 'High resolution data' }
+}
+
+LANGUAGE_OBJ_HTML[_tab_id] = 
+{
+	rus:
+	{
+		tab_hilayers: { title: 'Данные высокого разрешения' },
+		tab_hilayers_tabname: { innerHTML: 'Данные высокого разрешения' },
+		hrsat_visible_control: { title: 'Скрыть/показать данные' },
+		tab_hilayers_date_label: { innerHTML: 'Дата' }, 
+		tab_hilayers_date_from_label: { innerHTML: '&nbsp;&nbsp;&nbsp;c' },
+		tab_hilayers_date_to_label: { innerHTML: '&nbsp;по' },
+		tab_hilayers_date_only_label: { innerHTML: '- только за эту дату' },
+		group_filters_hide_tm_label: { innerHTML: 'Фильтр' }, 
+		tab_hilayers_data_poly_label: { innerHTML: 'Только по заданному полигону' }, 
+		tab_hilayers_data_cloud_label: { innerHTML: 'Облачность не более' },
+		tab_hilayers_data_filter_is_corrected: { innerHTML: 'Только скорректированные данные' },
+		tab_hilayers_sat_all_none_button: { value: 'откл/вкл все' }, 
+		tab_hilayers_data_satellite_label: { innerHTML: 'Спутник:' }, 
+		group_layers_4niitp_label: { innerHTML: 'Данные Геопортала Роскосмоса' },
+		tab_hilayers_data_satellite_kmss_label: { innerHTML: 'КМСС(Метеор-М1)' },
+		tab_hilayers_other_data_label: { innerHTML: 'Данные из других систем' }, 
+		tab_hilayers_data_list_label: { innerHTML: 'Список' }, 
+		_metadata_hrsat_prev: { value: 'Пред.порция' }, 
+		_metadata_hrsat_next: { value: 'След.порция' }, 
+		tab_hilayers_data_basket_label: { value: 'В корзину' }, 
+		_metadata_hrsat_clear_selection: { value: 'Снять выделение' }, 
+		group_hrsat_prod_label: { innerHTML: 'Продукты' }, 
+		group_hrsat_mod_label: { innerHTML: 'Фоновое покрытие:' }, 
+		tab_hilayers_background_none_label: { innerHTML: 'Не отображать' }, 
+		tab_hilayers_background_contour_label: { innerHTML: 'Контура' }, 
+		tab_hilayers_background_image_label: { innerHTML: 'Изображения' }
+	},
+	eng:
+	{
+		tab_hilayers: { title: 'High resolution data' },
+		tab_hilayers_tabname: { innerHTML: 'High resolution data' },
+		hrsat_visible_control: { title: 'Show/hide data' },
+		tab_hilayers_date_label: { innerHTML: 'Date' },
+		tab_hilayers_date_from_label: { innerHTML: '&nbsp;from' },
+		tab_hilayers_date_to_label: { innerHTML: '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to' },
+		tab_hilayers_date_only_label: { innerHTML: '- only this date ' },
+		group_filters_hide_tm_label: { innerHTML: 'Filter' }, 
+		tab_hilayers_data_poly_label: { innerHTML: 'Only in the specified polygon' }, 
+		tab_hilayers_data_cloud_label: { innerHTML: 'Сlound max' }, 
+		tab_hilayers_data_filter_is_corrected: { innerHTML: 'Only corrected data' },
+		tab_hilayers_sat_all_none_button: { value: 'on/off all' }, 
+		tab_hilayers_data_satellite_label: { innerHTML: 'Satallite:' }, 
+		group_layers_4niitp_label: { innerHTML: 'Roscosmos geoportal data' },
+		tab_hilayers_data_satellite_kmss_label: { innerHTML: 'KMSS(Meteor-M1)' },
+		tab_hilayers_other_data_label: { innerHTML: 'Data from other systems' }, 
+		tab_hilayers_data_list_label: { innerHTML: 'Data list' }, 
+		_metadata_hrsat_prev: { value: 'Prev page' }, 
+		_metadata_hrsat_next: { value: 'Next page' }, 
+		tab_hilayers_data_basket_label: { value: 'To the basket' }, 
+		_metadata_hrsat_clear_selection: { value: 'Deselect' }, 
+		group_hrsat_prod_label: { innerHTML: 'Products' }, 
+		group_hrsat_mod_label: { innerHTML: 'Area coverage:' }, 
+		tab_hilayers_background_none_label: { innerHTML: 'Do not display ' }, 
+		tab_hilayers_background_contour_label: { innerHTML: 'Scenes’ boundaries' }, 
+		tab_hilayers_background_image_label: { innerHTML: 'Images' }
+	}
+}
+
+if(	typeof( _GEOSMIS_MULTITAB_UI )!="undefined"  && _GEOSMIS_MULTITAB_UI==1) 
+{
+	delete LANGUAGE_OBJ_HTML[_tab_id].rus[_tab_id].title;
+	delete LANGUAGE_OBJ_HTML[_tab_id].eng[_tab_id].title;
+}
+
+
+</script>

@@ -1,0 +1,97 @@
+
+<script type="text/javascript">
+require([
+	"dojo/ready",
+	"dojo/store/Memory",					 // basic dojo/store
+	"cbtree/Tree",								 // Checkbox tree
+	"cbtree/model/TreeStoreModel"	// ObjectStoreModel
+	], function( ready, Memory, Tree, ObjectStoreModel) {
+			// Declare an JSON object
+
+                    
+                    
+                    var label_name_field = "name";
+                    var root_label_name = "Центры данных";
+                    
+                    if(project_language=="eng")
+                    {
+                     label_name_field = "engname";
+                     root_label_name = "Data centers";   
+                    }    
+                            
+					var stnstore = new Memory( { data: stndata_HRSAT2 });
+					_stnModelHrsat = new ObjectStoreModel( { store: stnstore,
+													 query: {id: "Stn"},
+													 labelAttr: label_name_field,
+													 labelType: "html",
+													 rootLabel: root_label_name,
+													 checkedRoot: true
+												 });
+                    
+					ready(function(){
+						stntree = new Tree( 
+						{ 
+                            model: _stnModelHrsat, 
+                            id:"treestn00",
+                            attachToForm:true,
+                            checkBoxes: true,
+                            nodeIcons: false,						    
+                            leafIcons: false,
+                            autoExpand: true,
+                            getTreeNodeById: function( id ) // new function to find DOM Tree node
+                            {
+                                return this._itemNodesMap[ id ][0];
+                            },
+                            branchIcons: false
+                            
+						}, "CheckboxTreeStn" );
+
+						stntree.startup();
+
+						stntree.on("click",stnChanged);
+						
+						stntree.on("load",stnTreeOnLoad); 
+				}); 
+				
+ 				function stnChanged(item, node, event)
+ 				{
+                   newFiltersChanged();
+ 			    }    		
+				
+                function stnTreeOnLoad()
+                {
+                    collapseChildrenNodes();
+                }    
+       
+                function collapseChildrenNodes()
+                {
+                    /* Collapse children */
+                    var ROOT_ID = "Stn";
+                    
+                	dojo.when(stnstore.getChildren(stnstore.get(ROOT_ID)), function (children) {
+                	    children.forEach(function (child) 
+                	    { 
+                	           //console.info("Children: " + child.name);
+                			   var treeNode = stntree.getTreeNodeById(child.id);
+                			   treeNode.collapse();
+                	    });
+                	});
+                }    
+                 
+                 
+});
+
+function getStnModelHrsat()
+{
+    return _stnModelHrsat;
+}        
+
+</script>
+
+
+	<div class="claro">
+        <form name="stnform" id=stnformid>
+		    <div id="CheckboxTreeStn"></div>
+	    </form>
+	</div>	
+   

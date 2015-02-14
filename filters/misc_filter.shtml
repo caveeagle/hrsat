@@ -1,0 +1,31 @@
+
+<script type="text/javascript">
+    
+    dojo.require("dijit.form.CheckBox");
+    
+</script>
+
+    <div style="line-height:2.0; font-size:10px; margin:10px; font-family: Verdana,Arial,Helvetica,sans-serif;">
+        <form name="miscfilterform" id=miscfilterformid>
+        
+        <input id="is_corrected" value="is_corrected" data-dojo-type="dijit.form.CheckBox" name="filter_is_corrected"
+        onChange="newFiltersChanged();"> <label for="filter_is_corrected"><span id="tab_hilayers_data_filter_is_corrected">Только скорректированные данные</span></label>
+        
+        <br>
+
+        <input id="poly_find_ch" value="is_polyfind" data-dojo-type="dijit.form.CheckBox" 
+        onChange="newFiltersChanged();"> <label for="poly_find_ch">  <span id="tab_hilayers_data_poly_label">Только по заданному полигону</span> </label>
+
+        <br>
+                
+        <input id="is_cloud" value="is_cloud" name="filter_is_cloud" data-dojo-type="dijit.form.CheckBox" 
+        checked onChange="newFiltersChanged();"> <label for="filter_is_cloud"><span id="tab_hilayers_data_cloud_label">С облачностью не более</span></label>
+        
+        	<input align=right name="max_cloud" size="2" value="10" type="text"
+        	            onchange="newFiltersChanged();"
+        	            style="font-size: 10px;" ><span>%</span>
+        	            
+        </form>	
+    </div>	
+	
+

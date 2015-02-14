@@ -1,0 +1,32 @@
+
+<!--#config errmsg="" -->
+
+<script type="text/javascript">
+
+    var HRSAT2STORE = {};
+
+    var satdata_HRSAT2 = <!--#include virtual="/geosmis/tabs/hrsat2/cgi/get_sat_devices_list.pl" -->
+
+
+    var stndata_HRSAT2 = <!--#include virtual="/geosmis/tabs/hrsat2/cgi/get_sat_sources_list.pl" -->
+
+
+</script>
+
+    <fieldset>
+    	<legend><a onFocus="if (this.blur) this.blur()" href="javascript:toggle_group('group_filters_hide')">
+    	    <img src="/images/arrow_closed.gif" id="group_filters_hide_img" alt="" />&nbsp;
+    	    <span style="font-size:14px;" id="group_filters_hide_tm_label">Фильтр</span>&nbsp;</a>
+    	</legend>
+    	<div id="group_filters_hide" style="display: none">  
+    	    
+          <!--#include virtual="/geosmis/tabs/hrsat2/filters/sat_filter.shtml" -->
+                										    
+          <!--#include virtual="/geosmis/tabs/hrsat2/filters/stn_filter.shtml" -->
+          
+          <!--#include virtual="/geosmis/tabs/hrsat2/filters/misc_filter.shtml" -->
+          
+  	    </div>
+    </fieldset>
+					            		
+            

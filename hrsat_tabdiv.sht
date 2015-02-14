@@ -1,0 +1,200 @@
+    <style type="text/css">
+    .tab_hrsat_icon {
+    	background-image: url('/geosmis/tabs/hrsat2/icon_hr.png'); 
+    	width: 23px;
+    	height: 23px;
+    	margin-left: 3px;
+    } 
+    </style>
+    
+    <div id="tab_hilayers" data-dojo-type="dijit/layout/ContentPane" data-dojo-props='
+    			iconClass:"tab_hrsat_icon",
+    			onShow: function(){}'>
+
+    <!--#config errmsg="" -->
+
+	<script type="text/javascript" src="/geosmis/tabs/hrsat2/hrsat1.js"></script>
+	<script type="text/javascript" src="/geosmis/tabs/hrsat2/hrsat2.js"></script>
+	
+	<script type="text/javascript">
+	    
+    /*  Define vars:  SATELLITES_NAMES_TRANSLATION, DEVICES_NAMES_TRANSLATION, CENTERS_NAMES_TRANSLATION   */ 
+    
+    <!--#include virtual="/geosmis/tabs/hrsat2/cgi/get_names_translations_list.pl" -->
+	    
+	</script>
+	
+    <div class="reducer" >
+
+				<div style="padding:5px;">
+
+			            		<div align=left><input type="checkbox" title="Скрыть/показать данные" id="hrsat_visible_control" onclick="setHrsatVisible(this.checked);" value="" checked/>&nbsp;<span id=tip_hrsat_001><b><span id='tab_hilayers_tabname'>Данные высокого разрешения</span></b></span><!--<hr>--></div>
+			            		
+								<hr>
+                                
+                                <div style="padding-top:7px;padding-bottom:7px;font-size:14px;">
+                                    
+    			                    <span id=tip_hrsat_005><span id='tab_hilayers_date_label'>Дата</span></span><br>
+    			                    <span id='tab_hilayers_date_from_label'>&nbsp;&nbsp;&nbsp;c</span>
+    						 	 	&nbsp;<b><span id="start_hrsat_date_field"  onclick="scwNextAction=set_hrsat_date_field.runsAfterSCW(this,this.id);scwShow(this,event);" style="cursor: pointer; cursor: hand; text-decoration: underline"></span></b>
+    						 	 	<img id=tip_hrsat_003 src="/images/calend.gif"   align="absbottom" onClick="scwNextAction=set_hrsat_date_field.runsAfterSCW(this,this.id);scwShow(scwID('start_hrsat_date_field'),event);">
+    						        <br>
+    						 	 	<span id='tab_hilayers_date_to_label'>&nbsp;по</span>
+    						 	 	&nbsp;<b><span id="stop_hrsat_date_field" onclick="scwNextAction=set_hrsat_date_field.runsAfterSCW(this,this.id);scwShow(this,event);" style="cursor: pointer; cursor: hand; text-decoration: underline"></span></b>
+    						 	 	<img id=tip_hrsat_004 src="/images/calend.gif"   align="absbottom" onClick="scwNextAction=set_hrsat_date_field.runsAfterSCW(this,this.id);scwShow(scwID('stop_hrsat_date_field'),event);">
+    						        
+    								        
+    								<span id=tip_hrsat_002>
+
+    								        <input  id="ForThisDateId" 
+    								                name="ForThisDate" 
+    								                type="checkbox" 
+    								                value="off"
+    								                style="vertical-align:middle;"
+    								                onclick="start_dt_disable();reload_hrsat_parameters();"
+    								                >
+    								        
+    								        <span id='tab_hilayers_date_only_label'>- только за эту дату</span>
+    								</span>
+                                
+                                </div>
+                                
+                           
+                                <!--#include virtual="/geosmis/tabs/hrsat2/filters/newfilters.sht" -->
+                            
+								<fieldset>
+									<legend id=tip_hrsat_list><a onFocus="if(this.blur) this.blur()" href="javascript:toggle_group('group_hrsat_list')"><img src="/images/arrow_opened.gif" id ="group_hrsat_list_img" alt="" />&nbsp;
+									<span id="group_hrsat_list_label"><span style="font-size:14px;" id='tab_hilayers_data_list_label'>Список</span></span>&nbsp;</a></legend>
+									<div id="group_hrsat_list">
+									
+										<div class="list_info" id=_metadata_hrsat_portion_info></div>
+										
+										<div id=_metadata_hrsat style="height:245px; overflow:auto;" >&nbsp</div>
+
+									    
+
+										<table border="0" cellspacing=0 cellpadding=0 width="100%">
+										  <tr>
+										    <td width=22 style="padding-left: 3px;">
+										    	<button  
+										    	    id=tip_hrsat_button_03 
+										    	    style="width:18px; height:20px; background:#D4D0C8;"
+										    	    onClick="metaobj_hrsat.PrevSelection();"
+										    	    ><img src="/images/list_up_raw.gif" align=top style="padding-top:3px;"></button>
+										    </td>
+										    
+										    <td style="padding-left: 3px;">
+										    	<input type=button id=_metadata_hrsat_prev value="Пред.порция" style="width:120px; height:18px; font-size:10px;font-weight: bold;background: #D4D0C8;" onClick="metaobj_hrsat.get( { portion: 'previous'  } );">
+										    </td>
+										    <td align="right">
+										    	<input id=tab_hilayers_data_basket_label type=button value="В корзину" style="width: 120px; height:18px; font-size:10px;font-weight: bold;background: #D4D0C8;" onclick="hrsat2Basket();">
+										    </td>
+
+										  </tr>
+										  <tr>
+										    <td style="padding-left: 3px;">
+										    	<button  
+										    	    id=tip_hrsat_button_04 
+										    	    style="width: 18px; height=20px; background: #D4D0C8;" 
+										    	    onClick="metaobj_hrsat.NextSelection();"><img src="/images/list_dwn_raw.gif" align=top style="padding-top:3px;"></button>
+										    </td>
+
+										    <td style="padding-left: 3px;">
+										    	<input  type=button id=_metadata_hrsat_next value="След.порция" style="width: 120px; height:18px; font-size:10px;font-weight: bold;background: #D4D0C8;" onClick="metaobj_hrsat.get( { portion: 'next'  } );">
+										    </td>
+										    <td align="right">
+										    	<input type=button id=_metadata_hrsat_clear_selection value="Снять выделение" style="width:120px; height:18px; font-size:10px;background: #D4D0C8;" onclick="clearSelectionHrsat();">
+										    </td>
+										    
+										    
+										  </tr>
+									<!--#if expr="$PROJECT=gazprom" -->
+										  <tr>
+										    <td>&nbsp;</td>
+										    <td style="padding-left: 10px;">
+										    	<input  type=button id='remove_hrsat_image' value="Удалить" style="width: 120px;; font-size:10px;font-weight: bold;background: #D4D0C8;" onClick="remove_hrsat_image();">
+										    </td>
+										    <td>&nbsp;</td>
+										  </tr>
+									<!--#endif -->
+										  
+										</table>
+
+
+								  	</div>
+								</fieldset>
+                                    
+    								<div id="group_hrsat_prod_label"
+    								    style="padding-top: 5px;
+    								           padding-bottom: 3px;  
+    								           padding-left: 5px;
+    								           font-size: 14px;"
+    								>
+									    Продукты:
+									</div>
+									    
+									<div id="group_hrsat_prod">
+
+										<form name=hrsat_product_filter>
+										
+                                                 <div id="_hrsat_prod_list_div" style="width:285px;">
+                                                 </div>
+										
+										</form>
+
+								  	</div>
+
+    								<div id="group_hrsat_set_label"
+    								    style="padding-top: 5px;
+    								           padding-bottom: 3px;  
+    								           padding-left: 5px;
+    								           font-size: 14px;"
+    								>
+									<span id="group_hrsat_mod_label">Фоновое покрытие:</span>
+									</div>
+										
+									
+										<table id="group_hrsat_mod" border="0" cellspacing="0" cellpadding="1">
+
+										  <tr>
+										    <td id=tip_hrsat_033>
+										      	<input id=ihmode_none
+										      	<!--#if expr="$PROJECT=volcanoes" --> checked <!--#endif --> 
+										      	name=ihmode type="radio" onclick="setHrsatLayers();">
+										      	<label> <!--style="font-weight: bold;"-->
+										      		<span id='tab_hilayers_background_none_label'>Не отображать</span>
+										      	</label>
+										    </td>
+										  </tr>
+
+										  <tr>
+										    <td id=tip_hrsat_034>
+										      	<input id=ihmode_contour
+										      	 <!--#if expr="$PROJECT!=volcanoes" --> checked <!--#endif -->
+										      	       name=ihmode type="radio" onclick="setHrsatLayers();">
+										      	<label> <!--style="font-weight: bold;"-->
+										      		<span id='tab_hilayers_background_contour_label'>Контура снимков</span>
+										      	</label>
+										    </td>
+										  </tr>
+
+										  <tr>
+										    <td id=tip_hrsat_035>
+										      	<input id=ihmode_img name=ihmode type="radio" onclick="setHrsatLayers();">
+										      	<label> <!--style="font-weight: bold;"-->
+										      		<span id='tab_hilayers_background_image_label'>Изображения</span>
+										      	</label>
+										    </td>
+										  </tr>
+
+										</table>    
+								  	
+						
+					</div>
+
+        </div>
+
+    </div>
+    
+    <!--#config errmsg="" -->
+    <!--#include virtual="hrsat_lang.sht" -->
