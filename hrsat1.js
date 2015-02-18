@@ -38,7 +38,8 @@ sat2prod['hrsat_img'] = {
 
 					"ALOS":"color_niitp",
 
-					"EO-1":"v_source_hyperion_demo",// Temporary, for Hyperion !
+					"EO-1":"v_source_hyperion,v_source_hyperion_night",
+					
 					"HICO":"v_source_hico",
 					
 					"BKA":"v_color_bka",
@@ -71,6 +72,14 @@ sat2prod['fusion'] = {
 				};
 				
 
+sat2prod['thermo'] = { 
+					"LANDSAT 4" : "v_rgb658_landsat",
+					"LANDSAT 5" : "v_rgb658_landsat",
+					"LANDSAT 7" : "v_rgb658_landsat",
+					"LANDSAT 8" : "v_rgb658_landsat",
+                    "EO-1":"v_source_hyperion_night_thermo,v_source_hyperion_thermo"
+				};
+
 sat2prod['rgb345'] = { 
 					"LANDSAT 4" : "rgb345_landsat",
 					"LANDSAT 5" : "rgb345_landsat",
@@ -80,11 +89,12 @@ sat2prod['rgb345'] = {
 					"SPOT 4" : "spot_cor_345"
 				};
 
-sat2prod['ndvi_landsat'] = { 
+sat2prod['ndvi_hrsat'] = { 
 					"LANDSAT 4" : "source_ndvi,ndvi_landsat",
 					"LANDSAT 5" : "source_ndvi,ndvi_landsat",
 					"LANDSAT 7" : "source_ndvi,ndvi_landsat",
-					"LANDSAT 8" : "source_ndvi,ndvi_landsat"
+					"LANDSAT 8" : "source_ndvi,ndvi_landsat",
+					"DEIMOS" : "source_ndvi"
 				};
 
 sat2prod['clouds_landsat'] = { 
