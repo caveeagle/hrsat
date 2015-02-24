@@ -20,7 +20,7 @@
 	    
     /*  Define vars:  SATELLITES_NAMES_TRANSLATION, DEVICES_NAMES_TRANSLATION, CENTERS_NAMES_TRANSLATION   */ 
     
-    <!--#include virtual="/geosmis/tabs/hrsat2/cgi/get_names_translations_list.pl" -->
+    <!--#include virtual="/geosmis/tabs/common_satellites_tabs/cgi/get_names_translations_list.pl" -->
 	    
 	</script>
 	

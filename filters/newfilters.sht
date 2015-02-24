@@ -5,10 +5,10 @@
 
     var HRSAT2STORE = {};
 
-    var satdata_HRSAT2 = <!--#include virtual="/geosmis/tabs/hrsat2/cgi/get_sat_devices_list.pl" -->
+    var satdata_HRSAT2 = <!--#include virtual="/geosmis/tabs/common_satellites_tabs/cgi/get_sat_devices_list.pl?sat_type=hrsat" -->
 
 
-    var stndata_HRSAT2 = <!--#include virtual="/geosmis/tabs/hrsat2/cgi/get_sat_sources_list.pl" -->
+    var stndata_HRSAT2 = <!--#include virtual="/geosmis/tabs/common_satellites_tabs/cgi/get_sat_sources_list.pl" -->
 
 
 </script>
