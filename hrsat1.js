@@ -643,14 +643,7 @@ function hrsat_OnMetaClick(opts)
 			{
 				var product_key_new;
 				
-				if(multi_hrsat_on)
-				{
-					product_key_new = "multi_hrsat";
-				}
-				else
-				{
-					product_key_new = "hrsat";
-				}
+				product_key_new = "multi_hrsat";
 					
 				
 				if(!layers['hrsat_selected'].params) {layers[product_key_new].params={};}
