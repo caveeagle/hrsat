@@ -14,7 +14,7 @@ function newFiltersChanged()
     
     if(qs_param['debug'])
     {
-        debugFilterOutput();
+        //debugHrsatFilterOutput();
     }     
 }    
 
@@ -182,7 +182,7 @@ function getFiltersState()
 }    
 
 
-function debugFilterOutput()
+function debugHrsatFilterOutput()
 {
     for (i=0;i<filterObj['sources'].length;i++)
     { 
