@@ -62,16 +62,22 @@ sat2prod['hrsat_img'] = {
 				};
 
 sat2prod['fusion'] = { 
-					"LANDSAT 4" : "fusion_landsat",
-					"LANDSAT 5" : "fusion_landsat",
-					"LANDSAT 7" : "fusion_landsat",
-					"LANDSAT 8" : "fusion_landsat",
+					"LANDSAT 4" : "v_color_landsat_auto",
+					"LANDSAT 5" : "v_color_landsat_auto",
+					"LANDSAT 7" : "v_color_landsat_auto",
+					"LANDSAT 8" : "v_color_landsat_auto",
 					"Resurs DK" : "bw_full_res",
+
+					"METEOR-M1" : "v_color_kmss_auto",
+					"METEOR-M2" : "v_color_kmss_auto",
+					
+					"RESURS P": "v_color_savr_auto,v_color_msah_auto",
+					
 					"SPOT 2" : "fusion_spot",
 					"SPOT 4" : "fusion_spot"
 				};
 				
-
+    
 sat2prod['thermo'] = { 
 					"LANDSAT 4" : "v_rgb658_landsat",
 					"LANDSAT 5" : "v_rgb658_landsat",
@@ -79,6 +85,15 @@ sat2prod['thermo'] = {
 					"LANDSAT 8" : "v_rgb658_landsat",
                     "EO-1":"v_source_hyperion_night_thermo,v_source_hyperion_thermo"
 				};
+
+sat2prod['thermo_rock'] = { 
+					"LANDSAT 4" : "v_landsat_thermo_rock",
+					"LANDSAT 5" : "v_landsat_thermo_rock",
+					"LANDSAT 7" : "v_landsat_thermo_rock",
+					"LANDSAT 8" : "v_landsat_thermo_rock",
+                    "EO-1":"v_source_hyperion_thermo_rock,v_source_hyperion_night_thermo_rock"
+				};
+
 
 sat2prod['rgb345'] = { 
 					"LANDSAT 4" : "rgb345_landsat",
