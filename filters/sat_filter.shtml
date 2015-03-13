@@ -70,6 +70,7 @@ require([ "dojo/ready","dojo/store/Memory","cbtree/Tree","cbtree/model/TreeStore
             function satTreeOnLoad()
             {
                 collapseChildrenNodes();
+                newFiltersChanged(); // New patch 12.03.2015
             }    
             
             function collapseChildrenNodes()

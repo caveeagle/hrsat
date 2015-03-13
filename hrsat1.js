@@ -160,7 +160,6 @@ function INIT_HRSAT_TAB()
 		    alert("CRITICAL ERROR IN PERL CONFIG (DEVICES_NAMES_TRANSLATION)");
 		    alert("HRSAT TAB NOT WORKING, SEE WEBSERVER LOGS")
 	    }    
-		
 }    
 
 
