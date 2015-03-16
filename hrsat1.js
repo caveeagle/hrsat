@@ -1574,19 +1574,26 @@ function improveProductsChange(products_array)
 {
   if(dojo.query("#improveProductsCh")[0].checked)
   {
-    products_array.forEach(function(item, i, arr){
-         if(item
-    
-    }); 
-    
-    function outputItem(item, i, arr) {
-      alert(i + ": " + item + " (массив:" + arr + ")");
+	var new_products_array = new Object();
+	
+	for(key in products_array)
+	{
+	  if ( /^v_/.test(key) )
+	  {
+	        new_products_array[key+"_auto"] = 1;
+	  }
+	  else
+	  {
+	        new_products_array[key] = 1;
+	  }
     }
-     
-    arr.forEach(outputItem);
+  
+    return new_products_array;
 
-    
   }
-  return products_array;
+  else
+  {
+    return products_array;
+  }
 }
 
