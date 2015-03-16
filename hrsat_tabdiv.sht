@@ -124,16 +124,29 @@
 								  	</div>
 								</fieldset>
                                     
-    								<div id="group_hrsat_prod_label"
-    								    style="padding-top: 5px;
-    								           padding-bottom: 3px;  
-    								           padding-left: 5px;
-    								           font-size: 14px;"
-    								>
-									    Продукты:
-									</div>
-									    
-									<div id="group_hrsat_prod">
+    								
+                                <table style="margin-bottom: 5px; margin-top: 5px;" 
+                                       border="0" width="100%" cellspacing="0" cellpadding="3"> 
+                                    
+                                <tr>
+                                    <td>    
+        								<div id="group_hrsat_prod_label">
+    									    Продукты: 
+    									</div>
+								    </td>
+                                    <!--#if expr="$SERVER_NAME=dev.nffc.aviales.ru" -->           
+                                    <td align=right>    
+
+                                        <input id="improveProductsCh" data-dojo-type="dijit.form.CheckBox" 
+                                        onChange="improveProductsMode();">
+        								<span style="font-size: 12px;" id="tab_hilayers_improve_prod_label">
+        								    Улучшенный продукт</span>
+								    </td>    
+                                    <!--#endif -->								        
+		                        </tr>
+		                        </table>
+		                        
+		                        <div id="group_hrsat_prod">
 
 										<form name=hrsat_product_filter>
 										

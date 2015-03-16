@@ -1184,7 +1184,7 @@ function setUnionDateHrsat(udate)
   document.getElementById("start_hrsat_date_field").innerHTML=udate;
   document.getElementById("stop_hrsat_date_field").innerHTML=udate;
 	
-	reload_hrsat_parameters();
+  reload_hrsat_parameters();
 }	
 
 
@@ -1362,7 +1362,12 @@ function make_hrsat_params_2()
          products_array["color_niitp"]=1;
         } 
     }
-
+    
+    if( typeof improveProductsChange == 'function')
+    {
+        products_array = improveProductsChange(products_array);
+    }
+    
 	// Add by Tolpin for ZAPAS
 	sats_str=sats_str.replace(/RESURS DK ZAPAS/g,"RESURS DK-1");
 	sats_str=sats_str.replace(/MONITOR-E ZAPAS/g,"MONITOR-E");
@@ -1566,4 +1571,28 @@ function satellite_rename(sat)
     return return_value;
 }
 
+function improveProductsMode()
+{
+  setActiveHrsatProduct();  
+}
+
+function improveProductsChange(products_array)
+{
+  if(dojo.query("#improveProductsCh")[0].checked)
+  {
+    products_array.forEach(function(item, i, arr){
+         if(item
+    
+    }); 
+    
+    function outputItem(item, i, arr) {
+      alert(i + ": " + item + " (массив:" + arr + ")");
+    }
+     
+    arr.forEach(outputItem);
+
+    
+  }
+  return products_array;
+}
 
