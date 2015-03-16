@@ -14,31 +14,30 @@ var selected_hrsat_scene_update = "";
 var sat2prod={};
 
 sat2prod['hrsat_img'] = { 
-					"LANDSAT 4" : "color_landsat,v_color_landsat",
-					"LANDSAT 5" : "color_landsat,v_color_landsat",
-					"LANDSAT 7" : "color_landsat,v_color_landsat",
-					"LANDSAT 8" : "color_landsat,v_color_landsat",
-					"RAPIDEYE" : "color_rapideye,v_color_rapideye",
-					"METEOR-M1" : "color_kmss,v_color_kmss,kmss_full_res",
-					"METEOR-M2" : "color_kmss,v_color_kmss,kmss_full_res",
+					"LANDSAT 4" : "v_color_landsat",
+					"LANDSAT 5" : "v_color_landsat",
+					"LANDSAT 7" : "v_color_landsat",
+					"LANDSAT 8" : "v_color_landsat",
+					"RAPIDEYE" : "v_for_color_rapideye,v_color_rapideye",
+					"METEOR-M1" : "v_for_color_kmss,v_color_kmss",
+					"METEOR-M2" : "v_for_color_kmss,v_color_kmss",
 					"METEOR-M1-KMSS" : "color",
 					"MONITOR-E-PSA" : "color",
-					"METEOR-KMSS_50" : "kmss_full_res",
-					"METEOR-KMSS_101" : "kmss_full_res",
-					"METEOR-KMSS_102" : "kmss_full_res",
-					"RESURS DK-1" : "bw",
-					
-          
+					"METEOR-KMSS_50" : "kmss_full_res",//0 scen
+					"METEOR-KMSS_101" : "kmss_full_res",//0 scen
+					"METEOR-KMSS_102" : "kmss_full_res",//0 scen
+					"RESURS DK-1" : "bw",//0 scen
+
 					"Resurs DK ZAPAS" : "zapas",  // Add by Tolpin for ZAPAS
 					"Monitor-E ZAPAS" : "zapas",  // Add by Tolpin for ZAPAS
 
-					"CANOPUS-V" : "color_canopus,v_color_canopus_v,bw_canopus,v_pnh_canopus_v",
+					"CANOPUS-V" : "v_for_color_canopus,v_color_canopus_v,v_for_bw_canopus,v_pnh_canopus_v",
 
 					"DEIMOS" : "v_color_deimos",
 
 					"ALOS":"color_niitp",
 
-					"EO-1":"v_source_hyperion,v_source_hyperion_night",
+					"EO-1":"v_source_hyperion,v_source_hyperion_night_thermo_rock",
 					
 					"HICO":"v_source_hico",
 					
@@ -58,32 +57,27 @@ sat2prod['hrsat_img'] = {
 					"METEOR-MSU_E" : "color",
 					
 					"WORLDVIEW":"v_pan_worldview",
-					"GAZPROM" : "orthophoto"
+					"QUICKBIRD":"v_pan_quickbird",					
+
+					"GAZPROM" : "orthophoto",
+
+					"SPOT 2" : "v_for_color_spot_cor",
+					"SPOT 4" : "v_for_color_spot_cor"
+					
 				};
 
 sat2prod['fusion'] = { 
-					"LANDSAT 4" : "v_color_landsat_auto",
-					"LANDSAT 5" : "v_color_landsat_auto",
-					"LANDSAT 7" : "v_color_landsat_auto",
-					"LANDSAT 8" : "v_color_landsat_auto",
-					"Resurs DK" : "bw_full_res",
-
-					"METEOR-M1" : "v_color_kmss_auto",
-					"METEOR-M2" : "v_color_kmss_auto",
-					
-					"RESURS P": "v_color_savr_auto,v_color_msah_auto",
-					
-					"SPOT 2" : "fusion_spot",
-					"SPOT 4" : "fusion_spot"
+ 					"SPOT 2" : "v_for_fusion_spot",
+					"SPOT 4" : "v_for_fusion_spot"
 				};
 				
     
 sat2prod['thermo'] = { 
-					"LANDSAT 4" : "v_rgb658_landsat",
-					"LANDSAT 5" : "v_rgb658_landsat",
-					"LANDSAT 7" : "v_rgb658_landsat",
-					"LANDSAT 8" : "v_rgb658_landsat",
-                    "EO-1":"v_source_hyperion_night_thermo,v_source_hyperion_thermo"
+					"LANDSAT 4" : "v_landsat_thermo",
+					"LANDSAT 5" : "v_landsat_thermo",
+					"LANDSAT 7" : "v_landsat_thermo",
+					"LANDSAT 8" : "v_landsat_thermo",
+                    "EO-1": "v_source_hyperion_thermo,v_source_hyperion_night_thermo"
 				};
 
 sat2prod['thermo_rock'] = { 
@@ -91,17 +85,17 @@ sat2prod['thermo_rock'] = {
 					"LANDSAT 5" : "v_landsat_thermo_rock",
 					"LANDSAT 7" : "v_landsat_thermo_rock",
 					"LANDSAT 8" : "v_landsat_thermo_rock",
-                    "EO-1":"v_source_hyperion_thermo_rock,v_source_hyperion_night_thermo_rock"
+                    "EO-1": "v_source_hyperion_thermo_rock,v_source_hyperion_night_thermo_rock"
 				};
 
 
 sat2prod['rgb345'] = { 
-					"LANDSAT 4" : "rgb345_landsat",
-					"LANDSAT 5" : "rgb345_landsat",
-					"LANDSAT 7" : "rgb345_landsat,v_rgb345_landsat",
-					"LANDSAT 8" : "rgb345_landsat,v_rgb345_landsat",
-					"SPOT 2" : "spot_cor_345",
-					"SPOT 4" : "spot_cor_345"
+					"LANDSAT 4" : "v_rgb345_landsat",
+					"LANDSAT 5" : "v_rgb345_landsat",
+					"LANDSAT 7" : "v_rgb345_landsat",
+					"LANDSAT 8" : "v_rgb345_landsat",
+					"SPOT 2" : "v_for_spot_cor_345",
+					"SPOT 4" : "v_for_spot_cor_345"
 				};
 
 sat2prod['ndvi_hrsat'] = { 
@@ -121,15 +115,15 @@ sat2prod['clouds_landsat'] = {
 
 
 sat2prod['bw_images'] = { 
-					"LANDSAT 7" : "panchromatic,v_pnh_landsat",
-					"LANDSAT 8" : "panchromatic,v_pnh_landsat",
-					"CANOPUS-V" : "bw_canopus,v_pnh_canopus_v",
+					"LANDSAT 7" : "v_pnh_landsat",
+					"LANDSAT 8" : "v_pnh_landsat",
+					"CANOPUS-V" : "v_for_bw_canopus,v_pnh_canopus_v",
 					
-					"WORLDVIEW":"v_pan_worldview",
-					"QUICKBIRD":"v_pan_quickbird",
-                    "RESURS P":"v_pnh_shmsa-vr,v_pnh_shmsa-sr",					
+					"WORLDVIEW": "v_pan_worldview",
+					"QUICKBIRD": "v_pan_quickbird",
+                    "RESURS P": "v_pnh_shmsa_vr,v_pnh_shmsa_sr",					
 
-					"ORBVIEW-3":"v_pan_orbview"
+					"ORBVIEW-3": "v_pan_orbview"
 				};
 
 
