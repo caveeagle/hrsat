@@ -1421,8 +1421,8 @@ function make_hrsat_params_2()
     for(var mkey in filterObj['misc']) 
     {
         var filter_key = mkey;
-        if(mkey=="cloudiness"){filter_key="max_clouds";};
-        if(mkey=="is_corrected"){filter_key="corrected";};
+        if(mkey=="cloudiness"){filter_key="max_clouds"};
+        if(mkey=="is_corrected"){filter_key="corrected"};
         
         if(mkey=="is_polyfind")
         {
@@ -1445,8 +1445,7 @@ function make_hrsat_params_2()
                 fiter_array["polyfind"] = poly_find_wkt; 
                 continue;
             }
-        };
-
+        }
 
         fiter_array[filter_key] = filterObj['misc'][mkey];  
     }
