@@ -49,7 +49,7 @@ sat2prod['hrsat_img'] = {
 					"SPOT 5":"color_kosmosnimki",
 					"DMC-2":"color_kosmosnimki",
 
-					"RESURS P":"v_color_resursp,v_color_savr,v_color_msah,v_pnh_shmsa_vr,v_pnh_shmsa_sr",
+					"RESURS P":"v_color_resursp,v_color_savr,v_color_msah",
 
 					"ENVISAT":"comp_mt_envisat",
 
@@ -144,7 +144,7 @@ function INIT_HRSAT_TAB()
 		{ 
 			var t = pars.DATA;
 			info_sat_answer(t);
-		}
+		};
 		
 		filterObj = getFiltersState();
 		
@@ -152,7 +152,7 @@ function INIT_HRSAT_TAB()
 		if(typeof(DEVICES_NAMES_TRANSLATION)!="object")
 		{
 		    alert("CRITICAL ERROR IN PERL CONFIG (DEVICES_NAMES_TRANSLATION)");
-		    alert("HRSAT TAB NOT WORKING, SEE WEBSERVER LOGS")
+		    alert("HRSAT TAB NOT WORKING, SEE WEBSERVER LOGS");
 	    }    
 }    
 
@@ -997,7 +997,9 @@ function setHrsatProductList(responseText,params)
 				}     
 		 	
 	 }
-     
+	 
+	 
+     return true;
 }	
 
 function clearSelectionHrsat()
@@ -1161,7 +1163,7 @@ function setHrsatTabState(load_obj)
 		  setActiveHrsatProduct();
 	}
 
-  setHrsatVisible(obj['IS_ACTIVE'])
+  setHrsatVisible(obj['IS_ACTIVE']);
   
 }
 
