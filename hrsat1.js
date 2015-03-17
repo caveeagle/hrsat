@@ -1574,6 +1574,8 @@ function improveProductsMode()
 
 function improveProductsChange(products_array)
 {
+  if(!dojo.query("#improveProductsCh")){return products_array;}
+
   if(dojo.query("#improveProductsCh")[0].checked)
   {
 	var new_products_array = new Object();
