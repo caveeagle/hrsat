@@ -35,7 +35,7 @@ sat2prod['hrsat_img'] = {
 
 					"DEIMOS" : "v_color_deimos",
 
-					"ALOS":"color_niitp",
+					"ALOS":"color_niitp",//0 scen
 
 					"EO-1":"v_source_hyperion,v_source_hyperion_night_thermo_rock",
 					
@@ -51,10 +51,10 @@ sat2prod['hrsat_img'] = {
 
 					"RESURS P":"v_color_resursp,v_color_savr,v_color_msah",
 
-					"ENVISAT":"comp_mt_envisat",
+					"ENVISAT":"comp_mt_envisat",//0 scen
 
-					"MONITOR-E-RDSA" : "color",
-					"METEOR-MSU_E" : "color",
+					"MONITOR-E-RDSA" : "color",//0 scen
+					"METEOR-MSU_E" : "color",//0 scen
 					
 					"WORLDVIEW":"v_pan_worldview",
 					"QUICKBIRD":"v_pan_quickbird",					
@@ -1573,7 +1573,7 @@ function improveProductsMode()
 
 function improveProductsChange(products_array)
 {
-  if(!dojo.query("#improveProductsCh")){return products_array;}
+  //if(!dojo.query("#improveProductsCh")){return products_array;}
 
   if(dojo.query("#improveProductsCh")[0].checked)
   {

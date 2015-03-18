@@ -140,7 +140,7 @@
                                         <input id="improveProductsCh" data-dojo-type="dijit.form.CheckBox" 
                                         onChange="improveProductsMode();">
         								<span style="font-size: 12px;" id="tab_hilayers_improve_prod_label">
-        								    Улучшенный продукт</span>
+        								    Автокалибровка продукта</span>
 								    </td>    
                                     <!--#endif -->								        
 		                        </tr>
