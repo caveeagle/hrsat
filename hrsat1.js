@@ -1573,7 +1573,7 @@ function improveProductsMode()
 
 function improveProductsChange(products_array)
 {
-  //if(!dojo.query("#improveProductsCh")){return products_array;}
+  if(!dojo.query("#improveProductsCh")[0]){return products_array;}
 
   if(dojo.query("#improveProductsCh")[0].checked)
   {
